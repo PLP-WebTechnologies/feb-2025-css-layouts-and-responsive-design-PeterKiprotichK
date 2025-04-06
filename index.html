@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox and Grid Layout</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #444;
+        }
+
+        /* Main Layout Using Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Sidebar, Main Content, and Ads */
+        .sidebar, .main-content, .ads {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            background-color: #e9f2ff;
+        }
+
+        .main-content {
+            background-color: #ffffff;
+            color: #444;
+        }
+
+        .ads {
+            background-color: #fff3e6;
+        }
+
+        /* Headings */
+        h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Media Queries */
+        /* For Tablets */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 2fr; /* Collapse sidebars */
+            }
+            .sidebar {
+                display: none; /* Hide sidebar on tablets */
+            }
+            .ads {
+                display: none; /* Hide ads on tablets */
+            }
+        }
+
+        /* For Mobile Devices */
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+            .sidebar, .ads {
+                display: none; /* Hide sidebar and ads on mobile */
+            }
+            nav a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Links, categories, or other content that complements the main content.</p>
+        </div>
+        <div class="main-content">
+            <h2>Main Content</h2>
+            <p>Welcome to the main content area! Here you can add important information, engaging articles, or other key elements. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. Cras a nunc nulla. Sed sagittis sollicitudin erat, vel placerat orci.</p>
+        </div>
+        <div class="ads">
+            <h3>Advertisements</h3>
+            <p>Check out our promotions, banners, or other sponsored content. Our products and services can enhance your experience.</p>
+        </div>
+    </div>
+
+</body>
+</html>
